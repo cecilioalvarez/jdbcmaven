@@ -27,7 +27,7 @@ public class PersonaRepositoryJDBC implements PersonaRepository {
 	@Override
 	public  List<Persona> buscarTodos(String orden, String direccion) {
 
-		String sql = "select * from personas order by " +orden;
+		String sql = "select * from personas order by " +orden +" ";
 		
 		sql+=direccion.equals("asc") ||  direccion.equals("desc")?   direccion:"";
 		
