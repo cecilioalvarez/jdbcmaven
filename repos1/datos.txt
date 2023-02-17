@@ -1,0 +1,2 @@
+1,pedro,20,comida,30,tren
+2,juan,30,cena,30,taxi
