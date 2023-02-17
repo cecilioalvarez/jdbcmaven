@@ -2,8 +2,9 @@ package com.arquitecturajava;
 
 import java.util.List;
 
-public class ClienteRepositoryJDBC {
+public class ClienteRepositoryJDBC implements ClienteRepository {
 
+	@Override
 	public List<Cliente> buscarTodos() {
 
 		String sql = "select * from Clientes";
@@ -16,6 +17,7 @@ public class ClienteRepositoryJDBC {
 		return helper;
 	}
 
+	@Override
 	public Cliente buscarUno(int id) {
 
 		String sql = "select * from Clientes where id ='" + id + "'";
@@ -23,6 +25,7 @@ public class ClienteRepositoryJDBC {
 
 	}
 
+	@Override
 	public void insertar(Cliente cliente) {
 
 		String sql = "insert into Clientes  (id,nombre) values ('" + cliente.getId() + "','" + cliente.getNombre()
@@ -31,6 +34,7 @@ public class ClienteRepositoryJDBC {
 
 	}
 
+	@Override
 	public void borrar(Cliente cliente) {
 
 		String sql = "delete from Clientes where id='" + cliente.getId() + "'";
@@ -39,6 +43,7 @@ public class ClienteRepositoryJDBC {
 
 	}
 
+	@Override
 	public void actualizar(Cliente cliente) {
 
 		String sql = "update Cliente set nombre='" + cliente.getNombre() + " where id='" + cliente.getId() + "'";

@@ -4,6 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import com.arquitecturajava.utils.LectorFichero;
+
 
 
 public class PrincipalPatron1 {
@@ -12,17 +14,20 @@ public class PrincipalPatron1 {
 
 	
 		
-		PersonaRepository repoPersona= new PersonaRepositoryJDBC();
+		LectorFichero lector= new LectorFichero("datos.txt");
+		List<String> lineas=lector.leerLineas();
+		ProcesadorGastos procesador= new ProcesadorGastos(lineas);
+		List<Cliente> listaClientes= procesador.procesar();
+		ClienteRepository repo= new ClienteRepositoryJDBC();
 		
-		List<Persona> lista=repoPersona.buscarTodos();
-	
-		System.out.println(lista.size());
 		
-		for (Persona p:lista) {
+		
+		for (Cliente c:listaClientes) {
 			
-			System.out.println(p.getNombre());
-			System.out.println(p.getEdad());
+			repo.insertar(c);
 		}
+		
+		
 		 
 	
 	}

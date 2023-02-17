@@ -44,6 +44,9 @@ public class Cliente {
 		Cliente other = (Cliente) obj;
 		return id == other.id;
 	}
+	public Cliente() {
+		super();
+	}
 	
 	
 	
