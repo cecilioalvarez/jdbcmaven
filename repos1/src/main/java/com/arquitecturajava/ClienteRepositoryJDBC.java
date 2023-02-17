@@ -28,7 +28,8 @@ public class ClienteRepositoryJDBC implements ClienteRepository {
 	@Override
 	public void insertar(Cliente cliente) {
 
-		String sql = "insert into Clientes  (id,nombre) values ('" + cliente.getId() + "','" + cliente.getNombre()
+		String sql = "insert into Clientes  (id,nombre) values ('" +
+		cliente.getId() + "','" + cliente.getNombre()
 				+ "')";
 		getHelper().actualizar(sql);
 
