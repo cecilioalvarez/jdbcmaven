@@ -80,5 +80,22 @@ class ExamenTest {
 
 	
 	}
+	
+	@Test
+	void esMalaNota() {
+
+		// arrange
+		Nota nota1 = mock(Nota.class);
+		when(nota1.esMuyDeficiente()).thenReturn(true);
+		when(nota1.esSuspenso()).thenReturn(true);
+		
+
+		Examen examen1 = new Examen(LocalDate.now(), nota1);
+		
+		assertTrue(examen1.esMalaNota());
+		
+
+	
+	}
 
 }
