@@ -14,57 +14,54 @@ class ExamenTest {
 
 	@Test
 	void aprobadotest() {
-		
-		//arrange
-		Nota nota= mock(Nota.class);
-		//configuras
+
+		// arrange
+		Nota nota = mock(Nota.class);
+		// configuras
 		when(nota.estaAprobada()).thenReturn(true);
-		
-		
-		Examen examen= new Examen(LocalDate.now(),nota);
-		boolean aprobado=examen.estaAprobado();
+
+		Examen examen = new Examen(LocalDate.now(), nota);
+		boolean aprobado = examen.estaAprobado();
 		assertTrue(aprobado);
-		
+
 	}
-	
+
 	@Test
 	void suspensotest() {
-		
-		//arrange
-		Nota nota= mock(Nota.class);
-		//configuras
+
+		// arrange
+		Nota nota = mock(Nota.class);
+		// configuras
 		when(nota.estaAprobada()).thenReturn(false);
-		
-		
-		Examen examen= new Examen(LocalDate.now(),nota);
-		boolean aprobado=examen.estaAprobado();
+
+		Examen examen = new Examen(LocalDate.now(), nota);
+		boolean aprobado = examen.estaAprobado();
 		assertFalse(aprobado);
-		
+
 	}
-	
+
 	@Test
 	void comparar2ExamenesTest() {
-		
-		//arrange
-		//Nota nota1= mock(Nota.class);
-		//Nota nota2= mock(Nota.class);
-		
-		Nota nota1= new Nota(7);
-		Nota nota2= new Nota(5);
-		
-		
-		//when(nota1.esMayor(nota2)).thenReturn(-1);
-		//objetos vacios
-		System.out.println(nota1.getValor());
-		System.out.println(nota2.getValor());
-		
-		System.out.println(nota1.esMayor(nota2));
-		Examen examen1= new Examen(LocalDate.now(),nota1);
-		Examen examen2= new Examen(LocalDate.now(),nota2);
-		System.out.println(examen1.esMayor(examen2));
-		int mayor= examen1.esMayor(examen2);
-	
-		assertEquals(1,mayor);
+
+		// arrange
+		Nota nota1 = mock(Nota.class);
+		Nota nota2 = mock(Nota.class);
+
+		when(nota1.esMayor(nota2)).thenReturn(1);
+		when(nota2.esMayor(nota1)).thenReturn(-1);
+		when(nota1.esMayor(nota1)).thenReturn(0);
+		when(nota2.esMayor(nota2)).thenReturn(0);
+
+		Examen examen1 = new Examen(LocalDate.now(), nota1);
+		Examen examen2 = new Examen(LocalDate.now(), nota2);
+		Examen examen3 = new Examen(LocalDate.now(), nota2);
+
+		int mayor = examen1.esMayor(examen2);
+		int menor = examen2.esMayor(examen1);
+		int igual = examen3.esMayor(examen3);
+		assertEquals(1, mayor);
+		assertEquals(-1, menor);
+		assertEquals(0, igual);
 	}
 
 }
