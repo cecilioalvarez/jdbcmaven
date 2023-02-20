@@ -26,7 +26,6 @@ public class Nota implements Comparable<Nota> {
 	public int compareTo(Nota o) {
 
 		if (this.getValor() > o.getValor()) {
-
 			return 1;
 		} else if (this.getValor() == o.getValor()) {
 			return 0;
