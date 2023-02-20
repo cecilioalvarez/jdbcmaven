@@ -1,6 +1,6 @@
 package com.arquitecturajava.mocking;
 
-public class Nota implements Comparable<Nota> {
+public class Nota  {
 
 	private double valor;
 
@@ -22,8 +22,8 @@ public class Nota implements Comparable<Nota> {
 		return valor >= 5;
 	}
 
-	@Override
-	public int compareTo(Nota o) {
+
+	public int esMayor(Nota o) {
 
 		if (this.getValor() > o.getValor()) {
 			return 1;

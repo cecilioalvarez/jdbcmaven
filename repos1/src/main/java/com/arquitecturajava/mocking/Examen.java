@@ -2,7 +2,9 @@ package com.arquitecturajava.mocking;
 
 import java.time.LocalDate;
 
-public class Examen implements Comparable<Examen> {
+public class Examen  {
+
+
 
 	private LocalDate fecha;
 	private Nota nota;
@@ -39,10 +41,11 @@ public class Examen implements Comparable<Examen> {
 		return nota.estaAprobada();
 	}
 
-
-	public int compareTo(Examen e) {
-		return this.getNota().compareTo(e.getNota());
+	public int esMayor(Examen o) {
+		return nota.esMayor(o.getNota());
 	}
+
+	
 	
 	
 	

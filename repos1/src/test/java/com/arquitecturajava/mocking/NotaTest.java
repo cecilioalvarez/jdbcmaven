@@ -31,9 +31,9 @@ class NotaTest {
 		Nota nota3= new Nota(2);
 		Nota nota4= new Nota(4);
 		
-		int mayor=nota1.compareTo(nota2);
-		int menor= nota3.compareTo(nota2);
-		int iguales= nota4.compareTo(nota2);
+		int mayor=nota1.esMayor(nota2);
+		int menor= nota3.esMayor(nota2);
+		int iguales= nota4.esMayor(nota2);
 		
 		assertEquals(1,mayor);
 		assertEquals(-1,menor);

@@ -46,18 +46,23 @@ class ExamenTest {
 	void comparar2ExamenesTest() {
 		
 		//arrange
-		Nota nota1= mock(Nota.class);
-		Nota nota2= mock(Nota.class);
-		when(nota1.compareTo(nota2)).thenReturn(-1);
+		//Nota nota1= mock(Nota.class);
+		//Nota nota2= mock(Nota.class);
 		
+		Nota nota1= new Nota(7);
+		Nota nota2= new Nota(5);
+		
+		
+		//when(nota1.esMayor(nota2)).thenReturn(-1);
+		//objetos vacios
 		System.out.println(nota1.getValor());
 		System.out.println(nota2.getValor());
 		
-		System.out.println(nota1.compareTo(nota2));
+		System.out.println(nota1.esMayor(nota2));
 		Examen examen1= new Examen(LocalDate.now(),nota1);
 		Examen examen2= new Examen(LocalDate.now(),nota2);
-		System.out.println(examen1.compareTo(examen2));
-		int mayor= examen1.compareTo(examen2);
+		System.out.println(examen1.esMayor(examen2));
+		int mayor= examen1.esMayor(examen2);
 	
 		assertEquals(1,mayor);
 	}
