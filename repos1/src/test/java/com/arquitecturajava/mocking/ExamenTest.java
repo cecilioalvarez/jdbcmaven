@@ -40,5 +40,20 @@ class ExamenTest {
 		assertFalse(aprobado);
 		
 	}
+	
+	@Test
+	void comparar2ExamenesTest() {
+		
+		//arrange
+		Nota nota= mock(Nota.class);
+		//configuras
+		when(nota.estaAprobada()).thenReturn(false);
+		
+		
+		Examen examen= new Examen(LocalDate.now(),nota);
+		boolean aprobado=examen.estaAprobado();
+		assertFalse(aprobado);
+		
+	}
 
 }

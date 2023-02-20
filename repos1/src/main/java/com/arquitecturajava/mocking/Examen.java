@@ -38,6 +38,12 @@ public class Examen {
 	public boolean estaAprobado() {
 		return nota.estaAprobada();
 	}
+
+
+	public int compareTo(Nota o) {
+		return nota.compareTo(o);
+	}
+	
 	
 	
 }
