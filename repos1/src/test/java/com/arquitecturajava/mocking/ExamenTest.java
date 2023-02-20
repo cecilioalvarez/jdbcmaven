@@ -1,5 +1,6 @@
 package com.arquitecturajava.mocking;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -45,15 +46,16 @@ class ExamenTest {
 	void comparar2ExamenesTest() {
 		
 		//arrange
-		Nota nota= mock(Nota.class);
-		//configuras
-		when(nota.estaAprobada()).thenReturn(false);
+		Nota nota1= mock(Nota.class);
+		Nota nota2= mock(Nota.class);
 		
 		
-		Examen examen= new Examen(LocalDate.now(),nota);
-		boolean aprobado=examen.estaAprobado();
-		assertFalse(aprobado);
 		
+		Examen examen1= new Examen(LocalDate.now(),nota1);
+		Examen examen2= new Examen(LocalDate.now(),nota2);
+		int mayor= examen1.compareTo(examen2);
+		
+		assertEquals(1,mayor);
 	}
 
 }

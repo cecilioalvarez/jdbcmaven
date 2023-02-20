@@ -40,8 +40,8 @@ public class Examen {
 	}
 
 
-	public int compareTo(Nota o) {
-		return nota.compareTo(o);
+	public int compareTo(Examen e) {
+		return this.getNota().compareTo(e.getNota());
 	}
 	
 	
