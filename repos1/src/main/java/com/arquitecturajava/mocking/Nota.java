@@ -1,6 +1,6 @@
 package com.arquitecturajava.mocking;
 
-public class Nota  {
+public class Nota {
 
 	private double valor;
 
@@ -22,7 +22,6 @@ public class Nota  {
 		return valor >= 5;
 	}
 
-
 	public int esMayor(Nota o) {
 
 		if (this.getValor() > o.getValor()) {
@@ -33,4 +32,30 @@ public class Nota  {
 			return -1;
 	}
 
+	public boolean esSobreSaliente() {
+
+		return valor > 2;
+	}
+
+	public boolean esNotable() {
+
+		return valor > 7 && valor<=9;
+	}
+	public boolean esBien() {
+
+		return valor > 6 && valor<=7;
+	}
+	public boolean esSuficiente() {
+
+		return valor >=5 && valor<=6;
+	}
+	public boolean esSuspenso() {
+
+		return valor >=3 && valor<5;
+	}
+	
+	public boolean esMuyDeficiente() {
+
+		return valor<3;
+	}
 }

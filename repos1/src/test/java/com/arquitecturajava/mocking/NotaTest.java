@@ -40,5 +40,29 @@ class NotaTest {
 		assertEquals(0,iguales);
 		
 	}
+	
+	@Test
+	void esNotaNotable() {
+		
+		
+		Nota nota1=new Nota(7.1);
+		
+		boolean cierto= nota1.esNotable();
+		
+		assertTrue(cierto);
+		
+	}
+	
+	@Test
+	void esSobreSaliente() {
+		
+		
+		Nota nota1=new Nota(9.1);
+		
+		boolean cierto= nota1.esSobreSaliente();
+		
+		assertTrue(cierto);
+		
+	}
 
 }

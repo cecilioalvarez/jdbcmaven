@@ -63,5 +63,22 @@ class ExamenTest {
 		assertEquals(-1, menor);
 		assertEquals(0, igual);
 	}
+	
+	@Test
+	void esBuenaNota() {
+
+		// arrange
+		Nota nota1 = mock(Nota.class);
+		when(nota1.esSobreSaliente()).thenReturn(true);
+		when(nota1.esNotable()).thenReturn(true);
+		
+
+		Examen examen1 = new Examen(LocalDate.now(), nota1);
+		
+		assertTrue(examen1.esBuenaNota());
+		
+
+	
+	}
 
 }
