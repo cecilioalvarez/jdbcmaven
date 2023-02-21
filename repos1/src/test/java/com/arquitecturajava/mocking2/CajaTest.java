@@ -14,9 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class CajaTest {
 	
-	Regalo r;
-	Regalo r2;
-	Regalo r3;
+	Regalo r,r2,r3;
 	
 	@BeforeEach
 	public void setUp() {
@@ -28,8 +26,6 @@ class CajaTest {
 
 	@Test
 	void calcularPrecioTotalTest() {
-		
-		
 		
 		when(r.getPrecio()).thenReturn(100.0);
 		when(r2.getPrecio()).thenReturn(200.0);
