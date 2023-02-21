@@ -7,29 +7,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class PruebaJDBCParametrizado {
+public class PruebaJDBCParametrizado2 {
 
 	public static void main(String[] args) {
 
 		ConfiguradorDB c = ConfiguradorDB.getInstance();
 
-		String sql = "insert into Personas (nombre,apellidos,edad) values (?,?,?)";
+		String sql = "select * from Personas where nombre= ?";
 		try (Connection con = DriverManager.getConnection(c.getUrl(), c.getUser(), c.getPassword());
 				PreparedStatement s = con.prepareStatement(sql)) {
-				s.setString(1, "david");
-				s.setString(2, "sanchez");
-				s.setInt(3, 20);
-				s.execute();
-			
-			
-			
+			inicializarParametros(s, "juan");
+			try (ResultSet rs = s.executeQuery()) {
+
+				while (rs.next()) {
+
+					System.out.println(rs.getString("nombre"));
+				}
+			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-	
 	}
-		
+
+	private static void inicializarParametros(PreparedStatement p, String campo) throws SQLException {
+		p.setString(1, campo);
+	}
 }
