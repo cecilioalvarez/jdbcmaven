@@ -18,7 +18,7 @@ public class PruebaJDBCParametrizado {
 
 			try (PreparedStatement s = con.prepareStatement(sql)) {
 				con.setAutoCommit(false);
-				s.setString(1, "david");
+				s.setString(1, "blanca");
 				s.setString(2, "sanchez");
 				s.setInt(3, 20);
 
@@ -33,6 +33,7 @@ public class PruebaJDBCParametrizado {
 			} catch (SQLException e) {
 
 				con.rollback();
+				System.err.println(e.getMessage());
 
 			}
 			con.commit();
