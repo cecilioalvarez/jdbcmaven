@@ -38,9 +38,6 @@ public class Caja {
 		this.regalo3 = regalo3;
 	}
 
-	
-	
-	
 	public Caja(Regalo regalo1, Regalo regalo2, Regalo regalo3, double precio) {
 		super();
 		this.regalo1 = regalo1;
@@ -51,7 +48,7 @@ public class Caja {
 
 	public double getPrecioTotal() {
 
-		return precio +regalo1.getPrecio()+ regalo2.getPrecio() + regalo3.getPrecio();
+		return precio + regalo1.getPrecio() + regalo2.getPrecio() + regalo3.getPrecio();
 	}
 
 	public double getPrecio() {
@@ -64,7 +61,34 @@ public class Caja {
 
 	public double getPrecioTotalConIva() {
 
-		return (precio*1.21)+ regalo1.getPrecioConIVA() + regalo2.getPrecioConIVA() + regalo3.getPrecioConIVA();
+		return (precio * 1.21) + regalo1.getPrecioConIVA() + regalo2.getPrecioConIVA() + regalo3.getPrecioConIVA();
+	}
+
+	public Regalo getRegaloMasCaro() {
+
+		Regalo mayor=null;
+		if (regalo1.getPrecio() > regalo2.getPrecio()) {
+
+			if (regalo1.getPrecio() > regalo3.getPrecio()) {
+				mayor=regalo1;
+			}
+		}
+
+		if (regalo2.getPrecio() > regalo3.getPrecio()) {
+
+			if (regalo2.getPrecio() > regalo1.getPrecio()) {
+				mayor=regalo2;
+			}
+		}
+		
+		if (regalo3.getPrecio() > regalo1.getPrecio()) {
+
+			if (regalo3.getPrecio() > regalo2.getPrecio()) {
+				mayor=regalo3;
+			}
+		}
+		return mayor;
+
 	}
 
 }

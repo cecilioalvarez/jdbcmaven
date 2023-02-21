@@ -71,6 +71,42 @@ class CajaTest {
 		double precioTotalConIva= caja.getPrecioTotalConIva();
 		assertEquals(600,precioTotalConIva);
 	}
+	
+	
+	@Test
+	void obtenerRegaloCajaMasCaroTest() {
+		
+		double precioInicial=200;
+	
+		when(r.getPrecio()).thenReturn(100.0);
+		when(r2.getPrecio()).thenReturn(700.0);
+		when(r3.getPrecio()).thenReturn(300.0);
+		
+		
+		Caja caja= new Caja(r,r2,r3);
+		
+		
+		// if anidada si los objetos tienen precio
+		Regalo mayor=caja.getRegaloMasCaro();
+		
+		assertEquals(r2,mayor);
+	}
+	
+	
+	@Test
+	void obtenerRegaloCajaMasCaro2Test() {
+		
+		
+		
+		//arrange
+		Caja caja=mock(Caja.class);
+		when(caja.getRegaloMasCaro()).thenReturn(r);
+		
+		//act invoca el metodo del objeto mock
+		Regalo mayor=caja.getRegaloMasCaro();
+		//assert confirma que tu mock esta correcto
+		assertEquals(r,mayor);
+	}
 	@AfterEach
 	public void tearDown() {
 		
