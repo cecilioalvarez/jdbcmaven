@@ -19,7 +19,7 @@ public class PruebaJDBCParametrizado4 {
 			
 			System.out.println(dto.getNombre());
 			System.out.println(dto.getEdad());
-			System.out.println(dto.getNombreRegalo());
+			System.out.println(dto.getRegalo());
 			System.out.println(dto.getPrecio());
 		}
 	}

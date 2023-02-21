@@ -4,7 +4,7 @@ public class NiñoDTO {
 
 	private String nombre;
 	private int edad;
-	private String nombreRegalo;
+	private String regalo;
 	private double precio;
 	public String getNombre() {
 		return nombre;
@@ -18,11 +18,11 @@ public class NiñoDTO {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	public String getNombreRegalo() {
-		return nombreRegalo;
+	public String getRegalo() {
+		return regalo;
 	}
-	public void setNombreRegalo(String nombreRegalo) {
-		this.nombreRegalo = nombreRegalo;
+	public void setRegalo(String regalo) {
+		this.regalo = regalo;
 	}
 	public double getPrecio() {
 		return precio;
@@ -30,11 +30,11 @@ public class NiñoDTO {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public NiñoDTO(String nombre, int edad, String nombreRegalo, double precio) {
+	public NiñoDTO(String nombre, int edad, String regalo, double precio) {
 		super();
 		this.nombre = nombre;
 		this.edad = edad;
-		this.nombreRegalo = nombreRegalo;
+		this.regalo = regalo;
 		this.precio = precio;
 	}
 	public NiñoDTO() {
