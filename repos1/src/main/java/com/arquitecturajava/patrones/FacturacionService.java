@@ -20,15 +20,15 @@ public class FacturacionService {
 		return repoCliente.buscarTodos();
 	}
 
+	public List<Factura> buscarTodasLasFacturas() {
+		return repoFactura.buscarTodos();
+	}
 
 	public Cliente buscarUnCliente(int id) {
 		return repoCliente.buscarUno(id);
 	}
 
 
-	public List<Factura> buscarTodasLasFacturas() {
-		return repoFactura.buscarTodos();
-	}
 
 
 	public void insertarFactura(Factura factura) {

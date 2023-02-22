@@ -11,8 +11,8 @@ public class ReflectionHelper {
 
 		propiedad = propiedad.substring(0, 1).toUpperCase() + propiedad.substring(1);
 		propiedad = "set" + propiedad;
-		System.out.println(propiedad);
-		System.out.println("valor"+ valor);
+		//System.out.println(propiedad);
+		//System.out.println("valor"+ valor);
 		Class<?> clase = (Class<?>) o.getClass();
 
 		Method[] metodos = clase.getDeclaredMethods();

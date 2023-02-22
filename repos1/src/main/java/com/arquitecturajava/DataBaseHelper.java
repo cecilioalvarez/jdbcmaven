@@ -52,13 +52,13 @@ public class DataBaseHelper {
 			
 				lista[i]=rsmd.getColumnLabel(i+1);
 				
-				System.out.println("rsmd :"+rsmd.getColumnName(i+1));
-				System.out.println("label"+rsmd.getColumnLabel(i+1));
-				System.out.println("columna"+lista[i]);
+				//System.out.println("rsmd :"+rsmd.getColumnName(i+1));
+				//System.out.println("label"+rsmd.getColumnLabel(i+1));
+				//System.out.println("columna"+lista[i]);
 				listaTiposColumna[i]=rsmd.getColumnTypeName(i+1);
 				
 			}
-			System.out.println("la ultima columna es "+ lista[3]);
+			
 			//lista[3]="regalo";
 
 			while (rs.next()) {
