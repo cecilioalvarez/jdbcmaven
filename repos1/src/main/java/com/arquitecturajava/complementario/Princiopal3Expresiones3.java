@@ -3,7 +3,7 @@ package com.arquitecturajava.complementario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Princiopal3Expresiones2 {
+public class Princiopal3Expresiones3 {
 
 	public static void main(String[] args) {
 		
@@ -13,14 +13,10 @@ public class Princiopal3Expresiones2 {
 		
 		int contador=0;
 		while(coincidencias.find()) {
-				contador++;
-				
+				System.out.println(coincidencias.start());
+				System.out.println(coincidencias.end());
 			
 		}
-		
-		
-		
-	
 		System.out.println(contador);
 		
 
