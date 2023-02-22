@@ -10,9 +10,10 @@ public class Fechas2 {
 	public static void main(String[] args) {
 
 		Calendar calendario = Calendar.getInstance();
-		calendario.set(2023, 2, 22);
+		calendario.set(2023, 2, 22,2,20);
 
-		DateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+		
+		DateFormat formateador = new SimpleDateFormat("dd/MM/yyyy - HH:mm");
 
 		System.out.println(formateador.format(calendario.getTime()));
 
