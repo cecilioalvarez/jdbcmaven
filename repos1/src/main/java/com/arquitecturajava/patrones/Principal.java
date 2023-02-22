@@ -22,7 +22,9 @@ public class Principal {
 		FacturaRepository repoFactura= new FacturaRepositoryJDBC();
 		
 		FacturacionService servicio= new FacturacionService(repoCliente, repoFactura);
+		
 		return servicio;
 	}
 
+	
 }
