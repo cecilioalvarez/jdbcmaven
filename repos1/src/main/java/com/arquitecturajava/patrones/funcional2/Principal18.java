@@ -18,6 +18,7 @@ public class Principal18 {
 
 		Level nivel= Level.LOW;
 		
-		System.out.println(nivel);
+		
+		System.out.println(Level.valueOf("LOW"));
 	}
 }
