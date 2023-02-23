@@ -14,13 +14,7 @@ public class Principal3 {
 		Persona p3= new Persona("david","perez",70);
 		List<Persona> lista=Arrays.asList(p1,p2,p3);
 		
-		Collections.sort(lista, new ComparadorApellidos());
-		
-		for (Persona p: lista) {
-			
-			System.out.println(p.getNombre());
-			System.out.println(p.getApellidos());
-		}
+		//java Stream o flujo de trabajo
 		
 
 	}
