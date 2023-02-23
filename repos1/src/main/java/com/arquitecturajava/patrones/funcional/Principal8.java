@@ -15,9 +15,9 @@ public class Principal8 {
 		Persona p4= new Persona("david","perez",70);
 		List<Persona> lista=Arrays.asList(p1,p2,p3,p4);
 		
-		FiltroPersonaNombre f1= new FiltroPersonaNombre("angel");
+		FiltroPersona f1= new FiltroPersonaApellidos("alvarez");
 		
-		lista= filtrarPorNombre(f1, lista);
+		lista= filtrarPersonas(f1, lista);
 		
 		for (Persona p: lista) {
 			
@@ -28,7 +28,7 @@ public class Principal8 {
 
 	}
 	
-	public static List<Persona> filtrarPorNombre(FiltroPersona filtro ,List<Persona> lista) {
+	public static List<Persona> filtrarPersonas(FiltroPersona filtro ,List<Persona> lista) {
 		
 		List<Persona> listaFiltro= new ArrayList<Persona>();
 		
