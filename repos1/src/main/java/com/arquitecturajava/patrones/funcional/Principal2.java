@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Principal {
+public class Principal2 {
 
 	public static void main(String[] args) {
 	
@@ -14,12 +14,11 @@ public class Principal {
 		Persona p3= new Persona("david","gomez",70);
 		List<Persona> lista=Arrays.asList(p1,p2,p3);
 		
-		Collections.sort(lista, new ComparadorEdad());
+		Collections.sort(lista);
 		
 		for (Persona p: lista) {
 			
 			System.out.println(p.getNombre());
-			System.out.println(p.getEdad());
 		}
 		
 
