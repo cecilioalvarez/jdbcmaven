@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Principal9 {
+public class Principal10 {
 
 	public static void main(String[] args) {
 	
@@ -17,11 +17,12 @@ public class Principal9 {
 		
 		//infiere los tipos
 		//FiltroPersona f1= (Persona p)->p.getApellidos().equals("alvarez");
-		FiltroPersona f2= new FiltroPersonaNombre("pedro");
-		FiltroPersona f1= p->p.getEdad()>20;
-		System.out.println(f1.getClass().getName());
+		FiltroPersona f2= (Persona p)->p.getApellidos().equals("alvarez");
 		
-		lista= filtrarPersonas(f1, lista);
+		FiltroPersona combinado= f2.or(p->p.getApellidos().equals("perez"));
+	
+		
+		lista= filtrarPersonas(combinado, lista);
 		
 		for (Persona p: lista) {
 			
@@ -45,3 +46,9 @@ public class Principal9 {
 	}
 
 }
+
+// hay q crear la clase factura
+// la clase factura tiene un filtrado por el campo  que queramos
+// desarrollamos el interface y dos clases que lo implemen
+// probamos el código en un programa main
+// añadimos lambdas
