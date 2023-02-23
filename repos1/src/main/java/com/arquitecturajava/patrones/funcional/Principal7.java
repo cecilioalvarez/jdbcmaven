@@ -18,6 +18,8 @@ public class Principal7 {
 		// la funcion recibe persona 1 , persona 2 y 
 		// devuelve un numero dpeendiendo sde su orden
 	
+		//inferencia de tipos
+	
 		Collections.sort(lista, (o1,o2)-> o1.getApellidos().compareTo(o2.getApellidos()));
 		
 		for (Persona p: lista) {
