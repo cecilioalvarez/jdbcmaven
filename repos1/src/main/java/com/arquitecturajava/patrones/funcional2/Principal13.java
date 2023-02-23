@@ -21,7 +21,10 @@ public class Principal13 {
 		Stream<Persona> flujo=lista.stream();
 		//Consumer es complementario a un predicate
 		flujo
+		.peek((p)->System.out.println("///"+p.getNombre()+"///"))
 		.filter((p)->p.getEdad()>18)
+		.peek((p)->System.out.println("*"+p.getNombre()+"*"))
+		.filter((p)->p.getNombre().startsWith("p"))
 		.forEach((Persona p)->System.out.println(p.getNombre()));
 	}
 
