@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Principal13 {
+public class Principal14 {
 
 	public static void main(String[] args) {
 
@@ -24,9 +24,8 @@ public class Principal13 {
 		//.peek((p)->System.out.println("///"+p.getNombre()+"///"))
 		.filter((p)->p.getEdad()>18)
 		//.peek((p)->System.out.println("*"+p.getNombre()+"*"))
-		.map((p)->p.getEdad()+2)
-		.map((e)->e+2)
-		.forEach((e)->System.out.println("la edad final mas los años es "+ e));
+		.filter((p)->p.getNombre().startsWith("p"))
+		.forEach((Persona p)->System.out.println(p.getNombre()));
 	}
 
 }
