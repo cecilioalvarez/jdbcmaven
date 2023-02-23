@@ -29,4 +29,7 @@ public class Principal13 {
 		.forEach((e)->System.out.println("la edad final mas los años es "+ e));
 	}
 
+	// lista de facturas el importe mas el iva de cada factura de la lista
+	// trabajados como uns stream de datos
+	
 }
