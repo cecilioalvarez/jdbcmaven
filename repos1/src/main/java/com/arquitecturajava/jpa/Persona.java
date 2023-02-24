@@ -1,9 +1,11 @@
 package com.arquitecturajava.jpa;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table (name="personas")
 public class Persona {
 
 	@Id
@@ -34,6 +36,9 @@ public class Persona {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.edad = edad;
+	}
+	public Persona() {
+		super();
 	}
 	
 	

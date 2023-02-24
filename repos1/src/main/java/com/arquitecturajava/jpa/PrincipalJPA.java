@@ -1,10 +1,10 @@
 package com.arquitecturajava.jpa;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class PrincipalJPA {
 
@@ -16,7 +16,7 @@ public class PrincipalJPA {
 		
 		EntityManager em= emf.createEntityManager();
 		
-		Persona p= em.find(Persona.class, "antonio");
+		Persona p= em.find(Persona.class, "juan");
 		
 		System.out.println(p.getNombre());
 		System.out.println(p.getApellidos());
