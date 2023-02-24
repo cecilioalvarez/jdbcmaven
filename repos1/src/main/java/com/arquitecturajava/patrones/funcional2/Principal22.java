@@ -16,7 +16,7 @@ public class Principal22 {
 		
 		Stream<String> flujo = Stream.of("hola","que","tal","estas","hoy","tu");
 		
-		flujo.map(String::toUpperCase).reduce((a,e)->a+","+e).ifPresent(System.out::println);
+		flujo.map(String::toUpperCase).reduce((a,e)->a+"|"+e).ifPresent(System.out::println);
 		
 	
 		

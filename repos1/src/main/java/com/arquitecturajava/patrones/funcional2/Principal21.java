@@ -18,17 +18,23 @@ public class Principal21 {
 		List<Factura> lista = Arrays.asList(f1, f2, f3);
 		Stream<Factura> flujo = lista.stream();
 		
-		Optional<Double> resultadoTotal=flujo
+		var resultadoTotal=flujo
 		.peek((e)->System.out.println(e))
 		.map(Factura::getImporte)
 		.peek((e)->System.out.println("importe "+e))
-		.reduce((total, elemento)->total+elemento);
+		.reduce((total, elemento)->total+(elemento+5));
 		
 		
 		if(resultadoTotal.isPresent()) {
 			
 			System.out.println(resultadoTotal.get());
 	
+		}
+		
+		int total=0;
+		for (int i=0;i<10;i++) {
+			
+			total+= i;
 		}
 	
 		
