@@ -11,18 +11,23 @@ public class Principal4 {
 
 	public static void main(String[] args) {
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("curso");
+		try {
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("curso");
 
-		EntityManager em = emf.createEntityManager();
+			EntityManager em = emf.createEntityManager();
 
-		TypedQuery<Persona> consulta = em.createQuery("select p from Persona p",Persona.class);
-		
-		List<Persona> personas= consulta.getResultList();
-		
-		for (Persona p : personas) {
+			TypedQuery<Persona> consulta = em.createQuery("select p from Persona p",Persona.class);
 			
-			System.out.println(p.getNombre());
-			System.out.println(p.getApellidos());
+			List<Persona> personas= consulta.getResultList();
+			
+			for (Persona p : personas) {
+				
+				System.out.println(p.getNombre());
+				System.out.println(p.getApellidos());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 
