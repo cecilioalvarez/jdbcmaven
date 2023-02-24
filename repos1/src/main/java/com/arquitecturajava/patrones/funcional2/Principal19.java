@@ -18,6 +18,10 @@ public class Principal19 {
 		List<Factura> lista = Arrays.asList(f1, f2, f3);
 		Stream<Factura> flujo = lista.stream();
 		
+		//un resultado de una operacion 
+		// ese resultado siempre podia existir o no existir
+		// sino existia pues devolvia un null
+		// si existia devolvia un objeto
 		Optional<Factura> oFactura=flujo.filter(f->f.getConcepto().equals("tablet")).findFirst();
 	
 		if(oFactura.isPresent()) {

@@ -1,6 +1,7 @@
 package com.arquitecturajava;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ClienteRepositoryJDBC implements ClienteRepository {
 
@@ -51,6 +52,12 @@ public class ClienteRepositoryJDBC implements ClienteRepository {
 
 		getHelper().actualizar(sql);
 
+	}
+
+	@Override
+	public Optional<Cliente> buscarUno2(int id) {
+		String sql = "select * from Clientes where id ='" + id + "'";
+		return Optional.ofNullable(getHelper().seleccionar(sql, Cliente.class).get(0));
 	}
 
 }
