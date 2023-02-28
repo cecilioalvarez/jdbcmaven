@@ -14,7 +14,7 @@ public class Contador {
 
 	// thread 1 a esta tarea y empiezo el bucle for
 	// este metodo estara sincronizado y no nos permitira el acceso a otros
-	public  void incrementar(int veces) {
+	public synchronized void incrementar(int veces) {
 
 		for (int i = 0; i < veces; i++) {
 			numero = numero + 1;
