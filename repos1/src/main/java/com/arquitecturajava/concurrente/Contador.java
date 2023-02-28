@@ -2,7 +2,7 @@ package com.arquitecturajava.concurrente;
 
 public class Contador {
 
-	private int numero;
+	private  int numero;
 
 	public int getNumero() {
 		return numero;
