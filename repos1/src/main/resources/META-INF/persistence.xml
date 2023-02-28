@@ -5,8 +5,12 @@
    
    
     <persistence-unit name="curso" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+     
         <class>com.arquitecturajava.jpa.Persona</class>
+     
         <properties>
+        
          	<property name= "hibernate.show_sql" value="true" />
          	<!-- cuando nos conectamos desde JPA hay  q elegir el tipo de motor -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />

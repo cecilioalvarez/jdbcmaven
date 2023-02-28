@@ -2,14 +2,20 @@ package com.arquitecturajava.jpa;
 
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 
 @Entity
 @Table (name="personas")
 public class Persona {
 
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + "]";
+	}
 	@Id
 	private String nombre;
 	private String apellidos;
