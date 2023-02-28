@@ -2,7 +2,6 @@ package com.arquitecturajava.concurrente;
 
 public class TareaContador implements Runnable {
 
-	
 	private Contador contador;
 
 	public TareaContador(Contador contador) {
@@ -18,26 +17,11 @@ public class TareaContador implements Runnable {
 		this.contador = contador;
 	}
 
-	public void incrementar() {
-		contador.incrementar();
-	}
-
 	@Override
 	public void run() {
-		
 
-		for (int i=0;i<20;i++) {
-			
-			incrementar();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
+		contador.incrementar(5);
+
 	}
-	
-	
+
 }
