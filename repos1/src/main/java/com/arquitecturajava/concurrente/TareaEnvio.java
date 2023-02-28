@@ -16,7 +16,9 @@ public class TareaEnvio implements Runnable {
 			synchronized (bolsa) {
 				if (!bolsa.estaLlena()) {
 					
+					System.out.println("pongo a esperar el envio ");
 					bolsa.wait();
+					
 				}
 				
 			}

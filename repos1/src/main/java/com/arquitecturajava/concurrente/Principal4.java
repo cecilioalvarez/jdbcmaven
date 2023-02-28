@@ -15,11 +15,20 @@ public class Principal4 {
 			Producto p = new Producto("p" + i, 200);
 			synchronized (b) {
 				
-				if (!b.estaLlena())
+				if (!b.estaLlena()) {
 					b.addProducto(p);
+					System.out.println(p.getNombre());
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
 				else {
 					System.out.println(" no se admite mas y esta llena");
-					b.notifyAll();
+					b.notify();
 					try {
 						Thread.sleep(2000);
 					} catch (InterruptedException e) {
@@ -27,13 +36,7 @@ public class Principal4 {
 						e.printStackTrace();
 					}
 				}
-				try {
-					Thread.sleep(100);
-					System.out.println(p.getNombre());
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			
 				
 			}
 			
